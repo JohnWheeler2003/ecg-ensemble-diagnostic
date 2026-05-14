@@ -20,5 +20,5 @@ FILTER_ORDER = 4
 
 # Cross-Validation Folds
 TRAIN_FOLDS = [1, 2, 3, 4, 5, 6, 7, 8]
-VAL_FOLD = [9]
-TEST_FOLD = [10]
+VAL_FOLD = 9
+TEST_FOLD = 10
