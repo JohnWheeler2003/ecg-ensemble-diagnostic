@@ -10,6 +10,7 @@ PROCESSED_DATA_DIR = DATA_DIR / "processed"
 PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Dataset Parameters
+BATCH_SIZE = 64
 SAMPLE_RATE = 100
 TARGET_CLASSES = ["NORM", "MI", "STTC", "CD", "HYP"]
 
