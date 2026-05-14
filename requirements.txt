@@ -1,0 +1,25 @@
+# Phase 1: Data Engineering & Signal Processing
+wfdb                # For downloading and reading the PTB-XL dataset
+numpy               # Matrix operations
+pandas              # Metadata handling (patient demographics, stratification)
+scipy               # Butterworth bandpass filtering
+tqdm                # For terminal progress bars
+
+# Phase 2 & 3: Deep Learning (Supervised & Transfer Learning)
+torch               # PyTorch core
+torchaudio          # Audio/signal processing utilities 
+torchvision         # Sometimes required by timm/transformers
+transformers        # HuggingFace (for loading the ECG-MAE backbone)
+timm                # PyTorch Image Models (often used for MAE architectures)
+
+# Phase 4: Comparative XAI 
+captum              # PyTorch's official library for DeepLIFT and Integrated Gradients
+
+# Phase 5 & 6: Ensembling, Metrics, & Visualization
+scikit-learn        # Stratified k-fold, ASL, calibration, and metrics (AUC, F2)
+matplotlib          # Plotting 12-lead ECG signals and 1D saliency maps
+seaborn             # Making confusion matrices and reliability diagrams look professional
+
+# Development Tools
+jupyter             # To run your Phase 4 and Phase 6 scratchpads
+ipykernel           # Allows Jupyter to talk to your virtual environment
