@@ -1,0 +1,5 @@
+# Development Tools
+jupyter==1.1.1      # To run your Phase 4 and Phase 6 scratchpads
+ipykernel==7.2.0    # Allows Jupyter to talk to your virtual environment
+pytest==9.0.3       # For unit and integration testing
+ruff==0.15.13       # For formatting

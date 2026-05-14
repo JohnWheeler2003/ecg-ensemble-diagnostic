@@ -11,7 +11,7 @@ PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 # Dataset Parameters
 SAMPLE_RATE = 100
-TARGET_CLASSES = ['NORM', 'MI', 'STTC', 'CD', 'HYP']
+TARGET_CLASSES = ["NORM", "MI", "STTC", "CD", "HYP"]
 
 # Signal Processing Hyperparameters
 FILTER_LOWCUT = 0.5
