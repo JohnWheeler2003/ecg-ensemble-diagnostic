@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
+import src.config as config
 
 
 class InceptionModule(nn.Module):
@@ -11,7 +12,7 @@ class InceptionModule(nn.Module):
         in_channels,
         out_channels,
         bottleneck_channels=32,
-        kernel_sizes=[10, 20, 40],
+        kernel_sizes=[11, 21, 41],
     ):
         """Initializes Inception module"""
         super().__init__()
@@ -74,7 +75,13 @@ class InceptionModule(nn.Module):
 class ECGInceptionTime(nn.Module):
     """Macro-architecture for ECG classification. Stacks multiple InceptionModules with redisual skip connections, followed by Global Average Pooling and a linear classification head"""
 
-    def __init__(self, in_channels=12, num_classes=5, num_blocks=3):
+    def __init__(
+        self,
+        in_channels=12,
+        num_classes=5,
+        num_blocks=3,
+        kernel_sizes=config.KERNEL_SIZES,
+    ):
         """Initializes full ECG InceptionTime network"""
         super().__init__()
 
@@ -86,7 +93,7 @@ class ECGInceptionTime(nn.Module):
         for i in range(num_blocks):
             out_channels = 32  # Base channel count per parallel conv
             inception_out_channels = (
-                out_channels * 3
+                out_channels * len(kernel_sizes)
             ) + out_channels  # 3 convs + 1 pool branch
 
             self.blocks.append(
@@ -94,7 +101,7 @@ class ECGInceptionTime(nn.Module):
                     in_channels=current_channels,
                     out_channels=out_channels,
                     bottleneck_channels=32,
-                    kernel_sizes=[10, 20, 40],
+                    kernel_sizes=kernel_sizes,
                 )
             )
 
