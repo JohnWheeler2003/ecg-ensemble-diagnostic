@@ -13,6 +13,8 @@ PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 BATCH_SIZE = 64
 SAMPLE_RATE = 100
 TARGET_CLASSES = ["NORM", "MI", "STTC", "CD", "HYP"]
+NUM_EPOCHS = 200
+PATIENCE = 12
 
 # Architectural Paramaters
 CHANNELS = 12
